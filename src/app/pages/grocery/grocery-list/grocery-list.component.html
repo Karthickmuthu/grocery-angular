@@ -1,0 +1,28 @@
+<div id="container">
+  <div id="left-col">
+    <h2> Grocery List </h2> 
+  </div>
+  <div id="right-col">
+    <p><button mat-raised-button color="primary" (click)="addItem()" >Add Item</button></p>
+  </div>
+</div>
+
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table">
+
+  <!-- Title Column -->
+   <ng-container matColumnDef="title">
+    <th mat-header-cell *matHeaderCellDef> Title </th>
+    <td mat-cell *matCellDef="let element" (click) = "editItem(element)"> {{element.title}} </td>
+  </ng-container>
+
+  <!-- Purchased Column -->
+  <ng-container matColumnDef="purchased">
+    <th mat-header-cell *matHeaderCellDef> Purchased </th>
+    <td mat-cell *matCellDef="let element">
+      <mat-slide-toggle [checked]="element.purchased" (change)="updateStatus(element)"></mat-slide-toggle>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

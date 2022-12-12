@@ -1,0 +1,40 @@
+table {
+    width: 60%;
+  }
+
+  .blue-snackbar {
+    background: #2196F3;
+  }
+  .mat-column-purchased {
+   width: 20px;
+  }
+  th.mat-header-cell {
+    text-align: left !important;
+    color:  black;
+    font-size: bold;
+    font-size: 16px;
+  }
+  .listheader {
+    padding: 0 0 14px 116px;
+  }
+  
+  #container {
+    overflow: hidden;
+        width: 60%;
+  }
+  #left-col {
+    float: left;
+    width: 70%;
+    padding-bottom: 500em;
+    margin-bottom: -500em;
+  }
+  #right-col {
+    float: left;
+    width: 20%;
+    margin-right: -1px;    
+    padding-bottom: 500em;
+    margin-bottom: -500em;
+  }
+  .mat-mdc-cell {
+    cursor: pointer !important;
+  }

@@ -1,0 +1,22 @@
+<h1 mat-dialog-title *ngIf="saveClick">Add New Item</h1>
+<h1 mat-dialog-title *ngIf="!saveClick">Update Details</h1>
+<div mat-dialog-content>
+  <p>    
+    <mat-form-field appearance="fill">
+      <mat-label>Title</mat-label>
+      <input required matInput [(ngModel)] = "title" (keypress)="onKeyPress(1)">
+      <mat-hint *ngIf="errorTitle" class="mat-error" >Please enter the title</mat-hint>
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field appearance="outline">
+      <mat-label>Notes</mat-label>
+      <input matInput [(ngModel)] = "notes" (keypress)="onKeyPress(2)">         
+    </mat-form-field>
+  </p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button tabindex="2" *ngIf="saveClick" (click)="onSaveClick()">Save</button>
+  <button mat-button tabindex="0" *ngIf="!saveClick" (click)="onUpdateClick()">Update</button>
+  <button mat-button tabindex="-1" [mat-dialog-close]="true">Cancel</button>
+</div>
